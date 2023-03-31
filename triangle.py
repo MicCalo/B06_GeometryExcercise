@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 # coding: utf8
 
-class Triangle:
-    def __init__(self, a, b, c):
-        self.a = a
-        self.b = b
-        self.c = c
+from painter import Painter
+from shape import Shape
 
-    def perimeter(self):
-        return self.a + self.b + self.c
+class Triangle(Shape):
+    def paint(self, painter: Painter):
+        painter.draw_triangle()
 
-    def area(self):
-        s = self.perimeter() / 2
-        return (s * (s - self.a) * (s - self.b) * (s - self.c)) ** 0.5
+    def calculate_area(self):
+        return 0.5 * self._base * self._height
+    
+    def __init__(self, x, y, color, base, height):
+        super().__init__(x, y, color)
+        self._base = base
+        self._height = height
+    
