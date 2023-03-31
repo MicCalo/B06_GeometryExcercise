@@ -14,5 +14,5 @@ class Triangle(Shape):
     def __init__(self, x, y, color, base, height):
         super().__init__(x, y, color)
         self._base = base
-        self._height = heigh
+        self._height = height
     
