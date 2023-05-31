@@ -1,0 +1,9 @@
+{
+    "type": "MYSQL",
+    "file_name": "shapes.db",
+    "hostname": "localhost",
+    "port": 3307,
+    "user": "python_user",
+    "password": "eden2222",
+    "database_name": "shapes"
+}

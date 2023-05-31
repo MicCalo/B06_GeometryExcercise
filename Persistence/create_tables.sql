@@ -1,0 +1,20 @@
+DROP TABLE IF EXISTS Points;
+DROP TABLE IF EXISTS Shapes;
+
+CREATE TABLE Shapes(
+    id INTEGER NOT NULL PRIMARY KEY,
+	type INTEGER NOT NULL,
+    x INTEGER NOT NULL,
+    y INTEGER NOT NULL,
+    color INTEGER NOT NULL
+);
+
+CREATE TABLE Points(
+    shapeId INTEGER NOT NULL,
+    position INTEGER NOT NULL,
+    x INTEGER NOT NULL,
+    y INTEGER NOT NULL,
+    FOREIGN KEY (shapeId) REFERENCES Shapes(id),
+    PRIMARY KEY (shapeId, position)
+	
+);

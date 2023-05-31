@@ -1,5 +1,0 @@
-from painter import painter
-from shape import Shape
-
-
-print("test")
