@@ -7,3 +7,4 @@ class Painter:
 
     def paint_ellipse(self, color, x, y, rx, ry):
         print("paint_ellipse is TBD")
+    
