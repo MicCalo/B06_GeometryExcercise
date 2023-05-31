@@ -3,7 +3,7 @@
 
 class Dog:
     """Base class for all dogs. Dogs have the properties 'name' and 'max_speed' and can 'say_name()'. """
-
+ 
     def __init__(self, name, max_speed):
         """Init, the constructor creates an instance of a dog. It requires the argument name and max_speed."""
         self._name = name
@@ -16,7 +16,7 @@ class Dog:
     def get_name(self):
         """Returns the name of the dog."""
         return self._name
-    
+
     def get_max_speed(self):
         """returns the max. speed this dog can reach."""
         return self._max_speed
@@ -47,11 +47,11 @@ class BorderCollie(ShepherdDog):
 
 
 if __name__ == '__main__':
-    # instantiate to dogs
-    bello = Dog("Bello", 15)
+    # instantiate two dogs
+    dog1 = Dog("Bello", 12)
     sira = BorderCollie("Sira", 25)
 
-    all_dogs = [bello, sira]
+    all_dogs = [dog1, sira]
 
     # print the name and the type of each dog
     for dog in all_dogs:
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     # try to let all dogs collect their herd
     for dog in all_dogs:
-        try:
+        try:            
             dog.collect_herd()
         except AttributeError:
             print(f"ERROR: Dog '{dog.get_name()}' can't collect a herd")
