@@ -1,3 +1,5 @@
+# coding: utf8
+
 from shape import Shape
 from painter import Painter
 

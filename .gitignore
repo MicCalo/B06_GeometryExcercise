@@ -133,3 +133,6 @@ dmypy.json
 *.xml
 *.iml
 *.pb
+
+# sqlite databases
+*.db

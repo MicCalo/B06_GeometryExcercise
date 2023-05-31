@@ -4,12 +4,11 @@
 import json
 import logging
 
-from shape import Shape
-from circle import Circle
-from ellipse import Ellipse
-from rectangle import Rectangle
-from triangle import Triangle
-from polygon import Polygon
+from Shapes.circle import Circle
+from Shapes.ellipse import Ellipse
+from Shapes.rectangle import Rectangle
+from Shapes.triangle import Triangle
+from Shapes.polygon import Polygon
 
 from Persistence.connector import create_connector, Connector
 from Persistence.shape_persistence import ShapePersistence
