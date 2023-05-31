@@ -5,10 +5,10 @@ from shape import Shape
 
 class Rectangle(Shape):
     def paint(self, painter: Painter):    
-        painter.paint_line(self._color, self._x,               self._y,              self._x + self._width, self._y)
-        painter.paint_line(self._color, self._x + self._width, self._y,              self._x + self._width, self._y + self._height)
-        painter.paint_line(self._color, self._x + self._width, self._y+self._height, self._x,               self._y + self._height)
-        painter.paint_line(self._color, self._x,               self._y+self._height, self._x,               self._y)
+        painter.paint_line(self._color, self._x - self._width / 2, self._y - self._height / 2, self._x + self._width / 2, self._y- self._height / 2)
+        painter.paint_line(self._color, self._x + self._width / 2, self._y - self._height / 2, self._x + self._width / 2, self._y + self._height / 2)
+        painter.paint_line(self._color, self._x + self._width / 2, self._y + self._height / 2, self._x - self._width / 2, self._y + self._height / 2)
+        painter.paint_line(self._color, self._x - self._width / 2, self._y + self._height / 2, self._x - self._width / 2, self._y- self._height / 2)
         
     def calculate_area(self):
         return self._width * self._height

@@ -4,7 +4,7 @@ from shape import Shape
 from painter import Painter
 
 class Polygon(Shape):
-    def __init__(self, x, y, color, points:list=[(-10, -10), (0, -5), (10, -20), (10, 0), (5, 5), (-5, 20)]):
+    def __init__(self, x, y, color, points:list=[(-50, -50), (0, -25), (50, -30), (80, 0), (25, 25), (-80, 30)]):
         super().__init__(x, y, color)
         self._points = points
 
