@@ -81,7 +81,7 @@ class MySqlConnector(Connector):
     
 
 class SqliteConnector(Connector):
-    def __init__(self, filename='small_shop_demo.db'):
+    def __init__(self, filename):
         Connector.__init__(self, 'SQLite', 'sqlite_version')
         self.filename=filename
 
