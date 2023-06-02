@@ -93,10 +93,10 @@ class SqliteConnector(Connector):
     
 def create_connector(db_config: dict) -> Connector:
     type = db_config['type']
-    if type == 'SQLITE':
+    if type.upper() == 'SQLITE':
         logging.info("using SQLite as DB driver")
         return SqliteConnector(db_config['file_name'])
-    elif type == 'MYSQL':
+    elif type.upper() == 'MYSQL':
         logging.info("using SQLite as DB driver")
         return MySqlConnector(
             hostname=db_config['hostname'],
