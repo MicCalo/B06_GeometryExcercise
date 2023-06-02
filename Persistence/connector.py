@@ -2,6 +2,7 @@
 
 import sqlite3
 import pymysql
+import pymssql
 import logging
 
 class Connector:
@@ -80,6 +81,26 @@ class MySqlConnector(Connector):
         return db
     
 
+class MicrosoftSqlConnector(Connector):
+    def __init__(self, hostname: str, port: int, user: str, password:str, database_name:str):
+        super().__init__("Microsoft SQL", "@@version")
+                
+        self.hostname=hostname
+        self.port=port
+        self.user=user
+        self.password=password
+        self.database_name=database_name
+    
+    def connect(self):
+        db = pymssql.connect(
+            host=self.hostname,
+            user=self.user,
+            port=self.port,
+            passwd=self.password,
+            database=self.database_name
+        )
+        return db
+
 class SqliteConnector(Connector):
     def __init__(self, filename):
         Connector.__init__(self, 'SQLite', 'sqlite_version')
@@ -104,6 +125,14 @@ def create_connector(db_config: dict) -> Connector:
             user=db_config['user'], 
             password=db_config['password'], 
             database_name=db_config['database_name'])
+    elif type.upper() == 'MSSQL':
+        logging.info("using Microsoft SQL as DB driver")
+        return MicrosoftSqlConnector(
+            hostname=db_config['hostname'],
+            port=db_config['port'], 
+            user=db_config['user'], 
+            password=db_config['password'], 
+            database_name=db_config['database_name'])
     else:
-        logging.info(f"Unknown DB driver type {type}")
+        logging.info(f"Unknown DB driver type {type}. Use 'SQLITE', 'MYSQL' or 'MSSQL'")
         raise NotImplementedError(f"DB type '{type}'")
