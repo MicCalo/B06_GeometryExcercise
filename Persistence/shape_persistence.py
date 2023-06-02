@@ -16,7 +16,12 @@ class ShapeType(IntEnum):
     RECTANGLE = 2,
     ELLIPSE = 3,
     TRIANGLE = 4,
-    POLYGON = 5
+    POLYGON = 5,
+    HEXAGON = 6,
+    STAR_6 = 7,
+    OCTAGON = 8,
+    TRAPEZOID = 9,
+    CIRCLE_IN_QUAD = 10
 
 
 
@@ -66,7 +71,7 @@ class ShapePersistence:
             points = [(shape._base, shape._height)]
         elif isinstance(shape, Polygon):
             _type = ShapeType.POLYGON
-            points =shape._points
+            points = shape._points
         else:
             raise TypeError(f"Shape of  type '{type(shape)}' not supported")
         return (_type, points)
