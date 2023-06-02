@@ -136,4 +136,5 @@ dmypy.json
 
 # output
 shapes.db
+shapes.db-*
 shapes.svg
